@@ -11,8 +11,8 @@
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
-  --font-size-large: 60px;
-  --font-size-medium: 20px;
+  --font-size-large: 70px;
+  --font-size-medium: 30px;
   --transition: all .2s ease-in-out;
 }
 
@@ -20,7 +20,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'VT323', monospace;
 }
 
 body {
@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background-color: #032;
 }
 
 li, ol, ul {
@@ -92,9 +93,16 @@ input[type=submit].correct {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: #fff;
 }
 
+#title {
+  flex: 50%;
+}
+
+#scoreboard {
+  flex:10%;
+}
 
 /* Phrase */
 
@@ -104,13 +112,14 @@ input[type=submit].correct {
   width: 65px;
   padding: 20px 1px 0 1px;
   margin-right: 2px;
+  margin-bottom: 15px;
   color: black;
   background: var(--color-neutral-light);
   border-radius: 5px;
 }
 
 .space {
-  width: 15px;
+  width: 30px;
 }
 
 .hide {
@@ -120,7 +129,6 @@ input[type=submit].correct {
 .show {
   color: #fff;
   background-color: #4ac0d5;
-  font-size: 20px;
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
@@ -128,14 +136,22 @@ input[type=submit].correct {
   border-radius: 5px;
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
+  text-align: center;
 }
 
 
 /* Keyboard */
 
 .keyrow {
+  width: 70%;
+  height: 90px;
+  margin: auto;
   display: flex;
   justify-content: center;
+}
+
+.key {
+  flex: 5%;
 }
 
 .chosen {
@@ -209,4 +225,18 @@ input[type=submit].correct {
 
 .lose a {
   color: var(--color-lose);
+}
+
+.row {
+  display: flex;
+  color: #fff;
+}
+.col {
+  flex: 1;
+}
+
+#phraseInput {
+  font-size: var(--font-size-medium);
+  flex: 30%;
+  margin-right: 15px;
 }
