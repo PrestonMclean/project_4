@@ -4,13 +4,13 @@ class Game
 {
   private $phrase;
   private $lives;
-  private $keybord;
+  private $keyboard;
 
   function __construct($phrase)
   {
     $this->phrase = $phrase;
     $this->lives = 5;
-    $this->keybord =
+    $this->keyboard =
       [
         ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
         ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
@@ -26,7 +26,7 @@ class Game
   public function setLives()
   {
     $numberIncorrect = 5;
-    foreach ($this->keybord as $keyrow) {
+    foreach ($this->keyboard as $keyrow) {
       foreach ($keyrow as $key) {
         if (in_array($key, $this->phrase->getSelected())) {
           if (!$this->phrase->checkletter($key)){
@@ -85,7 +85,7 @@ class Game
     $output .= '<input id="name" type="hidden" name="key" value="">';
       $output .= '<div id="qwerty" class="section">';
       //go through all the rows
-      foreach ($this->keybord as $keyrow) {
+      foreach ($this->keyboard as $keyrow) {
         $output .= '<div class="keyrow">';
         //go thorugh all the keys on that row
         foreach ($keyrow as $key) {
